@@ -1,0 +1,52 @@
+.btns-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btns-container button {
+  margin-right: 8px;
+}
+
+.project-list h4 {
+  color: var(--bold-text);
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.06em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.project-list p {
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+  margin-bottom: 0px;
+}
+
+.project-list {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.project-list li {
+  flex-shrink: 0;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-list figure {
+  margin: 0px;
+  width: 370px;
+  border: 1px solid #eeeeee;
+}
+
+.project-list figcaption {
+  padding: 20px 24px;
+}
