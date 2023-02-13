@@ -23,6 +23,7 @@ ul li {
   width: 1200px;
   margin: auto;
 }
+
 a,
 a:visited {
   text-decoration: none;
@@ -58,7 +59,7 @@ a:visited {
   border-bottom: 1px solid var(--main-gray);
 }
 
-.container.header-container {
+.header-container {
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -81,8 +82,10 @@ a:visited {
   margin-right: 46px;
 }
 
-.header-style a:hover {
+.header-style a:hover,
+.header-style a:hover .header-icon {
   color: var(--main-blue);
+  fill: var(--main-blue);
   transition-duration: 0.3s;
 }
 
@@ -93,13 +96,74 @@ a:visited {
 
 .header-mail-contact {
   margin-right: 50px;
+  position: relative;
 }
+.header-phone-contact {
+  position: relative;
+}
+
+.header-icon {
+  height: 100%;
+  position: absolute;
+}
+
+.smartphone {
+  left: -20px;
+  fill: var(--normal-text);
+}
+
+.envelope {
+  left: -26px;
+  fill: var(--normal-text);
+}
+
 /* FOOTER */
 
 .footer-style {
   background-color: var(--dark-background);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-container {
+  display: flex;
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.footer-media {
+  margin-left: 70px;
+}
+
+.footer-media p {
+  color: var(--white-background);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!! COLOR BACKGROUND !!!!!!!!!!!!!!!!!!! */
+
+.footer-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--white-background);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.footer-icon:hover {
+  background-color: var(--main-blue);
+  fill: var(--white-background);
+  transition-duration: 0.3s;
 }
 
 .firm-address {
@@ -121,7 +185,12 @@ a:visited {
 }
 
 .agency-background {
-  background-color: var(--dark-background);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/backgroung-img.jpg);
+  background-size: cover;
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -146,6 +215,14 @@ a:visited {
   letter-spacing: 0.03em;
   margin-bottom: 50px;
   margin-top: 0px;
+}
+
+.p-icon {
+  background-color: var(--main-gray);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  border-radius: 4px;
 }
 
 .paragraph-title {
@@ -227,6 +304,50 @@ a:visited {
   margin-top: 0px;
   width: 270px;
   text-align: center;
+}
+.member-media {
+  padding: 16px 32px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.media-icon {
+  fill: #afb1b8;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.media-icon:hover {
+  cursor: pointer;
+  background-color: var(--main-blue);
+  fill: var(--white-background);
+  transition-duration: 0.3s;
+}
+
+.client-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.client-icon {
+  width: 170px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  fill: #afb1b8;
+}
+
+.client-icon:hover,
+.client-icon:hover svg {
+  fill: var(--main-blue);
+  border-color: var(--main-blue);
+  transition-duration: 0.3s;
 }
 
 /* portfolio */

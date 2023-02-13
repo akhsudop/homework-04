@@ -27,9 +27,9 @@
 
         <nav class="navigation">
           <ul>
-            <li class="navigation-link"><a href="./index.html">Agencja</a></li>
+            <li class="navigation-link"><a href="">Agencja</a></li>
             <li class="navigation-link">
-              <a href="./portfolio.html">Portfolio</a>
+              <a href="./portfolio.html" target="_blank">Portfolio</a>
             </li>
             <li class="navigation-link"><a href="">Kontakt</a></li>
           </ul>
@@ -37,9 +37,21 @@
 
         <ul class="header-contact">
           <li class="header-mail-contact">
-            <a href="mailto:info@devstudio.com">info@devstudio.com</a>
+            <a href="mailto:info@devstudio.com">
+              <svg class="header-icon envelope" width="16" height="12">
+                <use href="./images/icons.svg#icon-envelope" />
+              </svg>
+              info@devstudio.com</a
+            >
           </li>
-          <li><a href="tel:+48111111111">+48 111 111 111</a></li>
+          <li class="header-phone-contact">
+            <a href="tel:+48111111111">
+              <svg class="header-icon smartphone" width="10" height="16px">
+                <use href="./images/icons.svg#icon-smartphone" />
+              </svg>
+              +48 111 111 111</a
+            >
+          </li>
         </ul>
       </div>
     </header>
@@ -188,14 +200,41 @@
     </main>
     <footer class="footer-style">
       <div class="container footer-container">
-        <div class="footer-logo">
-          <a href="/index.html">Web<span>Studio</span></a>
+        <div>
+          <div class="footer-logo">
+            <a href="./index.html">Web<span>Studio</span></a>
+          </div>
+          <address class="firm-address">
+            m. Warszawa, Aleje Jerozolimskie 21<br />
+            <a href="mailto:info@example.com">info@example.com</a><br />
+            <a href="tel:+48111111111">+48 111 111 111</a>
+          </address>
         </div>
-        <address class="firm-address">
-          m. Warszawa, Aleje Jerozolimskie 21<br />
-          <a href="mailto:info@example.com">info@example.com</a><br />
-          <a href="tel:+48111111111">+48 111 111 111</a>
-        </address>
+        <div class="footer-media">
+          <p>Dołącz do nas</p>
+          <div class="footer-icons">
+            <a class="footer-icon" href="#">
+              <svg width="20" height="20">
+                <use href="./images/icons.svg#icon-instagram-2" />
+              </svg>
+            </a>
+            <a class="footer-icon" href="#">
+              <svg width="20" height="20">
+                <use href="./images/icons.svg#icon-twitter-1" />
+              </svg>
+            </a>
+            <a class="footer-icon" href="#">
+              <svg width="20" height="20">
+                <use href="./images/icons.svg#icon-facebook-1" />
+              </svg>
+            </a>
+            <a class="footer-icon" href="#">
+              <svg width="20" height="20">
+                <use href="./images/icons.svg#icon-linkedin-1" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
