@@ -60,7 +60,69 @@
         <h1 class="main-title">
           Efektywne rozwiązania<br />dla waszego biznesu
         </h1>
-        <button type="button" class="mainBtn">Zamów usługę</button>
+        <button type="button" class="mainBtn" data-modal-open>
+          Zamów usługę
+        </button>
+
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="close-modal-btn" data-modal-close></button>
+            <div class="modal-content">
+              <form
+                class="my-form"
+                autocomplete="off"
+                method="post"
+                action="javascript:void(0);"
+              >
+                <h2>Zostaw swoje dane w formularzu poniżej</h2>
+                <fieldset class="fieldset">
+                  <label class="mod-label" for="name" name="name">Imię</label>
+                  <svg class="modal-icon" width="18" heigh="18">
+                    <use href="./images/icons.svg#icon-person-black" />
+                  </svg>
+                  <input type="text" id="name" required />
+                </fieldset>
+                <fieldset class="fieldset">
+                  <label class="mod-label" for="tel" name="phone-number"
+                    >Telefon</label
+                  >
+                  <svg class="modal-icon" width="18" heigh="18">
+                    <use href="./images/icons.svg#icon-phone-black" />
+                  </svg>
+                  <input type="tel" id="tel" required />
+                </fieldset>
+                <fieldset class="fieldset">
+                  <label class="mod-label" for="email" name="email"
+                    >Email</label
+                  >
+                  <svg class="modal-icon" width="18" heigh="18">
+                    <use href="./images/icons.svg#icon-email-black" />
+                  </svg>
+                  <input type="email" id="email" required />
+                </fieldset>
+                <fieldset class="fieldset fieldset-com">
+                  <label class="mod-label" for="comment">Komentarz</label>
+                  <textarea
+                    name="comment"
+                    type="textarea"
+                    id="comment"
+                    rows="6"
+                    placeholder="Wprowadź tekst"
+                    maxlength="400"
+                  ></textarea>
+                </fieldset>
+                <div class="legal-container">
+                  <input type="checkbox" id="checkbox" name="legal-checkbox" />
+                  <label class="legal-label" for="checkbox"
+                    >Oświadczam iż akceptuję <a href="/">Regulamin</a> i
+                    <a href="/">Politykę Prywatności</a>.</label
+                  >
+                </div>
+                <button type="submit" class="submitBtn mainBtn">Wyślij</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
       <section class="section paragraphs-section">
         <div class="container paragraphs">
@@ -115,8 +177,9 @@
             </li>
           </ul>
           <h2 class="second-title">Czym się zajmujemy</h2>
-          <ul class="activities-list">
-            <li>
+          <ul class="services-list">
+            <li class="service-container">
+              <p class="service-name">Aplikacje komputerowe</p>
               <img
                 src="./images/tasks1.jpg"
                 alt="Website developing"
@@ -124,7 +187,8 @@
                 height="294"
               />
             </li>
-            <li>
+            <li class="service-container">
+              <p class="service-name">Aplikaje mobilne</p>
               <img
                 src="./images/tasks2.jpg"
                 alt="Website developing"
@@ -132,7 +196,8 @@
                 height="294"
               />
             </li>
-            <li>
+            <li class="service-container">
+              <p class="service-name">Rozwiązania graficzne</p>
               <img
                 src="./images/tasks3.jpg"
                 alt="Website developing"
@@ -371,5 +436,6 @@
         </div>
       </div>
     </footer>
+    <script src="./modal.js"></script>
   </body>
 </html>

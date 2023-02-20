@@ -64,15 +64,16 @@ a:visited {
   display: flex;
   align-items: center;
 }
+
 .navigation {
   display: flex;
   flex-grow: 1;
 }
+
 .navigation ul {
   color: var(--bold-text);
   font-size: 14px;
   display: flex;
-  /* justify-content: space-between; */
   text-align: center;
   padding-left: 0px;
   margin-left: 94px;
@@ -82,11 +83,14 @@ a:visited {
   margin-right: 46px;
 }
 
+.header-style a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header-style a:hover,
 .header-style a:hover .header-icon {
   color: var(--main-blue);
   fill: var(--main-blue);
-  transition-duration: 0.3s;
 }
 
 .header-contact {
@@ -105,6 +109,7 @@ a:visited {
 .header-icon {
   height: 100%;
   position: absolute;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .smartphone {
@@ -158,12 +163,13 @@ a:visited {
   align-items: center;
   border-radius: 50%;
   margin-right: 10px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon:hover {
   background-color: var(--main-blue);
   fill: var(--white-background);
-  transition-duration: 0.3s;
 }
 
 .firm-address {
@@ -245,11 +251,36 @@ a:visited {
   padding: 0px;
 }
 
-.activities-list {
+.services-list {
   display: flex;
   justify-content: space-between;
   padding: 0px;
   margin: 0px;
+}
+
+.service-container {
+  position: relative;
+}
+
+.service-container > img {
+  vertical-align: bottom;
+}
+.service-container > p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-background);
+  margin: 0px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .team-container {
@@ -292,7 +323,6 @@ a:visited {
   margin-bottom: 0px;
   margin-top: 10px;
   text-align: center;
-  font-weight: 500px;
 }
 
 .member-name {
@@ -319,13 +349,13 @@ a:visited {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color 250ms, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .media-icon:hover {
   cursor: pointer;
   background-color: var(--main-blue);
   fill: var(--white-background);
-  transition-duration: 0.3s;
 }
 
 .client-icons {
@@ -341,13 +371,14 @@ a:visited {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon:hover,
 .client-icon:hover svg {
   fill: var(--main-blue);
   border-color: var(--main-blue);
-  transition-duration: 0.3s;
 }
 
 /* portfolio */
@@ -359,19 +390,27 @@ a:visited {
   background-color: var(--main-blue);
   font-size: 16px;
   line-height: 2;
+  font-weight: 700;
   color: var(--white-background);
   border: none;
   border-radius: 4px;
-  padding: 10px 42px 10px 42px;
+  width: 200px;
+  height: 50px;
+  /* padding: 10px 42px; */
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mainBtn:hover {
   cursor: pointer;
   background-color: #106db9;
-  transition-duration: 0.3s;
+}
+
+.submitBtn {
+  margin-top: 30px;
 }
 
 button {
@@ -383,13 +422,157 @@ button {
   padding: 6px 22px 6px 22px;
   text-align: center;
   letter-spacing: 0.03em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   background-color: var(--main-blue);
-  transition-duration: 0.3s;
   color: var(--white-background);
   cursor: pointer;
+}
+
+/* MODAL */
+
+.backdrop {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: scale(100%);
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform 0.75s, opacity 0.25s;
+  z-index: 3;
+}
+
+.is-hidden {
+  transform: scale(0%);
+  opacity: 0;
+}
+
+.is-hidden .modal {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  /* width: 528px;
+  height: 581px; */
+  background-color: var(--white-background);
+  margin: auto;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.75s;
+  position: relative;
+}
+
+.close-modal-btn {
+  background-color: var(--white-background);
+  background-image: url(../images/close-modal.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FORM */
+
+.my-form {
+  padding: 40px;
+}
+
+.my-form h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--bold-text);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.fieldset {
+  margin-top: 28px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 11px 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  /* height: 40px; */
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.fieldset-com {
+  height: 120px;
+  padding: 12px 16px;
+}
+
+.mod-label {
+  position: absolute;
+  top: -18px;
+  font-size: 12px;
+  line-height: 14px;
+  left: 0px;
+}
+
+.fieldset input {
+  width: 100%;
+  border: none;
+  height: 16px;
+}
+
+.fieldset textarea:focus,
+.fieldset input:focus {
+  outline: none;
+}
+
+.legal-label {
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  margin-left: 7px;
+}
+
+.legal-label a:visited,
+.legal-label a {
+  text-decoration: underline;
+  color: var(--main-blue);
+}
+
+.legal-container input {
+  width: 16px;
+  height: 15px;
+}
+
+.fieldset textarea {
+  width: 100%;
+  resize: none;
+  padding: 0px;
+  border: none;
+}
+
+.modal-icon {
+  /* position: absolute; */
+  height: 18px;
+  margin-right: 12px;
+}
+
+textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
 }
